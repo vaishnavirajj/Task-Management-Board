@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Management Board</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Sidebar with navigation buttons -->
+  <div class="sidebar">
+    <h2>Task Board</h2>
+    <button onclick="openTaskInput()">+ Add New Task</button>
+    <button onclick="openCategoryInput()">+ Add New Category</button>
+  </div>
+
+  <!-- Main content area -->
+  <div class="main">
+    <h1>Task Management Board</h1>
+    <div class="board">
+      <div class="category" id="todo" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <h2>To-Do</h2>
+        <div class="task-list" id="todo-tasks"></div>
+      </div>
+      <div class="category" id="in-progress" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <h2>In Progress</h2>
+        <div class="task-list" id="in-progress-tasks"></div>
+      </div>
+      <div class="category" id="done" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <h2>Done</h2>
+        <div class="task-list" id="done-tasks"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Task input modal -->
+  <div id="task-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeTaskInput()">&times;</span>
+      <h3>Add New Task</h3>
+      <input type="text" id="new-task-input" placeholder="Task description">
+      <button onclick="addTask()">Add Task</button>
+    </div>
+  </div>
+
+  <!-- Category input modal -->
+  <div id="category-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeCategoryInput()">&times;</span>
+      <h3>Add New Category</h3>
+      <input type="text" id="new-category-input" placeholder="Category name">
+      <button onclick="addCategory()">Add Category</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
