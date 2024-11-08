@@ -3,13 +3,10 @@
 ## Table of Contents
 - [Description](#description)
 - [Features](#features)
-- [Demo](#demo)
 - [Tech Stack](#tech-stack)
-- [Installation and Setup](#installation-and-setup)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Future Enhancements](#future-enhancements)
-- [Contributing](#contributing)
 - [License](#license)
 
 ---
