@@ -26,10 +26,6 @@ The **Task Management Board** is a web-based application designed to help users 
 - **Responsive Design**: Ensures a smooth experience across all screen sizes and devices.
 - **Dynamic Category Addition**: Add new categories as needed to further customize the board according to your unique requirements.
 
-## Demo
-
-*(Include a screenshot or GIF showcasing the drag-and-drop functionality here)*
-
 ## Tech Stack
 
 The project is developed using core web technologies:
