@@ -134,3 +134,101 @@ function addCategory() {
     alert("Please enter a valid category name or use a unique category name.");
   }
 }
+
+let categories = ["To-Do", "In Progress", "Done"]; // Default categories
+
+function openTaskInput() {
+  populateCategoryDropdown(); // Populate the dropdown with available categories
+  document.getElementById("task-modal").style.display = "block";
+}
+
+function closeTaskInput() {
+  document.getElementById("task-modal").style.display = "none";
+}
+
+function openCategoryInput() {
+  document.getElementById("category-modal").style.display = "block";
+}
+
+function closeCategoryInput() {
+  document.getElementById("category-modal").style.display = "none";
+}
+
+function addTask() {
+  const taskDescription = document.getElementById("new-task-input").value;
+  const selectedCategory = document.getElementById("task-category").value;
+
+  if (taskDescription) {
+    const taskElement = document.createElement("div");
+    taskElement.className = "task";
+    taskElement.draggable = true;
+    taskElement.ondragstart = drag;
+    taskElement.textContent = taskDescription;
+
+    // Add task to the selected category
+    document.getElementById(`${selectedCategory.toLowerCase()}-tasks`).appendChild(taskElement);
+    closeTaskInput();
+  } else {
+    alert("Please enter a task description.");
+  }
+}
+
+function addCategory() {
+  const newCategoryName = document.getElementById("new-category-input").value;
+
+  if (newCategoryName && !categories.includes(newCategoryName)) {
+    categories.push(newCategoryName);
+    
+    // Dynamically create new category section on the board
+    const categoryDiv = document.createElement("div");
+    categoryDiv.className = "category";
+    categoryDiv.id = newCategoryName.toLowerCase().replace(/\s+/g, '-');
+    categoryDiv.ondrop = drop;
+    categoryDiv.ondragover = allowDrop;
+    
+    const categoryHeader = document.createElement("h2");
+    categoryHeader.textContent = newCategoryName;
+    categoryDiv.appendChild(categoryHeader);
+    
+    const taskListDiv = document.createElement("div");
+    taskListDiv.className = "task-list";
+    taskListDiv.id = `${newCategoryName.toLowerCase().replace(/\s+/g, '-')}-tasks`;
+    categoryDiv.appendChild(taskListDiv);
+    
+    document.querySelector(".board").appendChild(categoryDiv);
+    
+    // Refresh dropdown with the new category
+    populateCategoryDropdown();
+    closeCategoryInput();
+  } else {
+    alert("Please enter a unique category name.");
+  }
+}
+
+function populateCategoryDropdown() {
+  const categoryDropdown = document.getElementById("task-category");
+  categoryDropdown.innerHTML = ""; // Clear existing options
+
+  categories.forEach(category => {
+    const option = document.createElement("option");
+    option.value = category.toLowerCase().replace(/\s+/g, '-');
+    option.textContent = category;
+    categoryDropdown.appendChild(option);
+  });
+}
+
+// Drag and Drop functions
+function allowDrop(event) {
+  event.preventDefault();
+}
+
+function drag(event) {
+  event.dataTransfer.setData("text", event.target.id);
+}
+
+function drop(event) {
+  event.preventDefault();
+  const data = event.dataTransfer.getData("text");
+  event.target.appendChild(document.getElementById(data));
+}
+
