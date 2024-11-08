@@ -34,14 +34,23 @@
   </div>
 
   <!-- Task input modal -->
-  <div id="task-modal" class="modal">
+  <!-- Task input modal -->
+<div id="task-modal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeTaskInput()">&times;</span>
       <h3>Add New Task</h3>
+      
+      <!-- Category selection dropdown -->
+      <label for="task-category">Select Category:</label>
+      <select id="task-category">
+        <!-- Options will be populated dynamically -->
+      </select>
+      
       <input type="text" id="new-task-input" placeholder="Task description">
       <button onclick="addTask()">Add Task</button>
     </div>
   </div>
+  
 
   <!-- Category input modal -->
   <div id="category-modal" class="modal">
