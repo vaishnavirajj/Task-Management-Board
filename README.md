@@ -33,42 +33,6 @@ The project is developed using core web technologies:
 - **CSS**: Provides styling and responsiveness, ensuring a visually appealing user experience.
 - **JavaScript**: Implements drag-and-drop functionality, task management, and local storage for data persistence.
 
-## Installation and Setup
-
-To set up and run this project locally, follow these steps:
-
-### Prerequisites
-To run this project, you need:
-- A modern web browser (e.g., Chrome, Firefox, Edge)
-- [Git](https://git-scm.com/) installed for cloning the repository (optional)
-
-### Installation
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/your-username/task-management-board.git
-   ```
-2. **Navigate to the project directory**:
-   ```bash
-   cd task-management-board
-   ```
-3. **Open the `index.html` file in your browser**:
-   You can open the `index.html` file directly in your browser by double-clicking it or running a local server.
-
-### Optional: Run with Local Server
-
-You can also run this project on a local server, which is often useful for development purposes:
-
-1. **Using Python**:
-   ```bash
-   python -m http.server
-   ```
-   Open `http://localhost:8000` in your browser to view the project.
-
-2. **Using Visual Studio Code with Live Server Extension**:
-   - Install the "Live Server" extension in VS Code.
-   - Right-click `index.html` and select "Open with Live Server."
-
 ## Usage
 
 1. **Add a Task**:
@@ -105,22 +69,6 @@ Here are some potential future features and improvements:
 - **Due Dates and Reminders**: Set due dates for tasks and send reminders as deadlines approach.
 - **Dark Mode**: Provide a dark theme for improved accessibility and aesthetics.
 - **User Authentication**: Enable multiple users to manage individual task boards with user accounts.
-
-## Contributing
-
-Contributions are welcome! If you'd like to help improve this project, please follow these steps:
-
-1. **Fork the repository**.
-2. **Create a new branch** for your feature or bug fix:
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-3. **Commit your changes** and push them to your fork:
-   ```bash
-   git commit -m "Add your feature"
-   git push origin feature/your-feature-name
-   ```
-4. **Submit a pull request** detailing your changes.
 
 ## License
 
