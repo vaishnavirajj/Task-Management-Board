@@ -11,10 +11,6 @@
 
 ---
 
-## Description
-
-The **Task Management Board** is a web-based application designed to help users organize and manage their tasks efficiently. It provides a simple, interactive, and flexible platform to move tasks between different categories like "To-Do," "In Progress," and "Done" with an intuitive drag-and-drop interface. This project is ideal for personal productivity, project management, and workflow visualization.
-
 ## Features
 
 - **Drag-and-Drop Functionality**: Easily drag tasks from one category to another to update their status.
